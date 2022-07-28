@@ -2,7 +2,6 @@ export interface ICustomer {
     readonly id: number,
     name: string,
     birthDate: Date,
-    age: () => number,
     email: string
 }
 
@@ -11,9 +10,8 @@ export interface IBook {
     title: string,
     author: string,
     yearOfPublishing: number,
-    pages: number
-    image: string
-    bookSeries?: string,
+    pages: number,
+    image: string,
     genre: string,
     description: string,
     rate: number,
@@ -22,16 +20,17 @@ export interface IBook {
 }
 
 export interface IBookSeries extends IBook {
+    bookSerieTitle: string,
     prevBook?: string,
     nextBook?: string
 }
 
-export interface IDiscount extends ICustomer {
-    date: Date,
-    discount: () => number
+export interface IBirthdayDiscount extends ICustomer {
+    currentDate: Date,
+    discount: () => boolean
 }
 
-export interface IOrder extends IDiscount {
+export interface IOrder extends IBirthdayDiscount {
     readonly id: number,
     items: number[],
     totalPrice: () => number

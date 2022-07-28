@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularProject';
+  userName = 'Olya(input name from AppComponent)';
+
+  public doSomething(event: string) {
+    console.log(event);
+  }
 }
