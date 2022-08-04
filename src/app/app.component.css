@@ -1,3 +1,10 @@
 .title {
     color: rgb(71, 71, 189);
 }
+.books__section-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.book__row {
+    display: flex;
+}

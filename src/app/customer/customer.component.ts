@@ -8,19 +8,15 @@ import { ICustomer } from '../interfaces/interfaces';
 })
 export class CustomerComponent implements ICustomer, OnInit {
   @Input() id: number = 1;
-  @Input() name: string = 'olya';
+  @Input() name: string = '';
   birthDate: Date = new Date;
   email: string = '123@gmail.com';
-  @Output() onClick: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
-  public handleClick() {
-    this.onClick.emit('you clicked!')
-  }
+  
   
   ngOnInit(): void {
-    console.log('user id', this.id)
   }
 
 }

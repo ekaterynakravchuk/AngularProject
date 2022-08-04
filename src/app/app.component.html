@@ -1,5 +1,10 @@
 <h1 class="title">Angular Project</h1>
-<p>{{userName}}</p>
-<app-customer [name]="userName" (onClick)="doSomething($event)"></app-customer>
-<app-book></app-book>
-<app-bookserie></app-bookserie>
+<p>Hello, {{ userName }}</p>
+<app-customer [name]="userName"></app-customer>
+<div class="single-books">
+    <h3 class="books__section-title">Single Books:</h3>
+    <div class="book__row">
+        <app-book *ngFor="let singleBook of singleBooks"  [singleBook]="singleBook"></app-book>
+    </div>
+</div>
+<app-bookserie [seriesBook]="seriesBooks[0]" ></app-bookserie>

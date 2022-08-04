@@ -30,8 +30,9 @@ export interface IBirthdayDiscount extends ICustomer {
     discount: () => boolean
 }
 
-export interface IOrder extends IBirthdayDiscount {
+export interface IOrder {
     readonly id: number,
     items: number[],
+    discount: IBirthdayDiscount,
     totalPrice: () => number
 }

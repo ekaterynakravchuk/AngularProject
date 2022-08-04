@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { IBook, IBookSeries } from './interfaces/interfaces';
+import { singleBooks } from './data/singlebooks';
+import { seriesBook } from './data/bookseries';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularProject';
-  userName = 'Olya(input name from AppComponent)';
+  userName:any = 'stranger';
 
-  public doSomething(event: string) {
-    console.log(event);
-  }
+  singleBooks: IBook[] = singleBooks
+  seriesBooks: IBookSeries[] = seriesBook
+
+
 }

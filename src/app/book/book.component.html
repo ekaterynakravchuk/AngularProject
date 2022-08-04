@@ -1,16 +1,17 @@
-<p>book info:</p>
-<div class="wrapper">
-    <img src="{{ image }}">
-    <ul>
-        <li>id: {{id}}</li>
-        <li>title: {{ title }}</li>
-        <li>author: {{ author }}</li>
-        <li>yearOfPublishing: {{ yearOfPublishing}}</li>
-        <li>pages: {{ pages }}</li>
-        <li>genre: {{ genre }}</li>
-        <li>description: {{ description }}</li>
-        <li>rate: {{ rate }}</li>
-        <li>cover: {{ cover }}</li>
-        <li>price: {{ price | currency}}</li>
+<div class="book__item">
+    <img class="book__img" src="{{ singleBook.image }}">
+    <ul class="book__list">
+        <li class="book__title" appHighlight>{{ singleBook.title }}</li>
+        <li class="book__author">{{ singleBook.author }}</li>
+        <li class="book__genre">genre: {{ singleBook.genre }}</li>
+        <li class="book__yaer">year of publishing: {{ singleBook.yearOfPublishing}}</li>
+        <li class="book__pages">pages: {{ singleBook.pages }}</li>
+        <li class="book__rate">rate: {{ singleBook.rate }}</li>
+        <li class="book__cover">cover: {{ singleBook.cover }}</li>
+        <li class="book__price">price: {{ singleBook.price | currency}}</li>
+        <li class="book__btn"><button class="button" (click)="description = !description" 
+            [ngClass]="{'button--pressed': description}">
+            {{description ? 'Hide' : 'Show'}} description</button></li>
+        <li class="book__description" *ngIf="description">{{ singleBook.description }}</li>
     </ul>
 </div>
